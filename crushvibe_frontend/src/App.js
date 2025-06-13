@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-/* global PUBLIC_URL */
 import "./App.css";
 import FloatingHearts from "./components/HeartAnimation";
 import Inputs from "./components/Inputs";

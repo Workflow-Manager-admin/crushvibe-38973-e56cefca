@@ -140,7 +140,7 @@ body {
 /* Main centered container for CrushVibe */
 .centered-main-container {
   position: relative;
-  max-width: 680px;
+  max-width: 980px; /* Was 680px, now much wider for desktop */
   width: 98vw;
   margin: 0 auto;
   margin-top: 68px;
@@ -152,7 +152,7 @@ body {
     0 3.5px 26px 0 rgba(225, 160, 255, 0.16),
     0 2px 0.5px 0 rgba(255,255,255,0.16) inset
   ;
-  padding: 52px 64px 38px 64px;
+  padding: 64px 96px 50px 96px; /* More generous padding left/right & top */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,11 +165,14 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* Slightly reduce size on large laptops/screens but lower than 1200px */
 @media (max-width: 1200px) {
   .centered-main-container {
-    max-width: 98vw;
+    max-width: 92vw;
     padding-left: 6vw;
     padding-right: 6vw;
+    padding-top: 52px;
+    padding-bottom: 38px;
   }
 }
 @media (max-width: 900px) {
