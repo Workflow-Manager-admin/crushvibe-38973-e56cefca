@@ -140,7 +140,7 @@ body {
 /* Main centered container for CrushVibe */
 .centered-main-container {
   position: relative;
-  max-width: 540px;
+  max-width: 680px;
   width: 98vw;
   margin: 0 auto;
   margin-top: 68px;
@@ -152,7 +152,7 @@ body {
     0 3.5px 26px 0 rgba(225, 160, 255, 0.16),
     0 2px 0.5px 0 rgba(255,255,255,0.16) inset
   ;
-  padding: 52px 48px 38px 48px;
+  padding: 52px 64px 38px 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,6 +165,13 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+@media (max-width: 1200px) {
+  .centered-main-container {
+    max-width: 98vw;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}
 @media (max-width: 900px) {
   .centered-main-container {
     max-width: 96vw;
@@ -195,14 +202,14 @@ body {
 /* Prominent Crush-O-Meter title styling */
 .crush-title {
   font-family: 'Pacifico', cursive, 'Poppins', 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  font-size: 3.5rem;
+  font-size: 4.2rem;
   color: #FF7EB9;
   text-align: center;
   font-weight: bold;
   letter-spacing: 0.06em;
-  line-height: 1.1;
-  margin-top: 0;
-  margin-bottom: 32px;
+  line-height: 1.04;
+  margin-top: 0.2em;
+  margin-bottom: 36px;
   margin-left: 0;
   margin-right: 0;
   text-shadow:
@@ -213,24 +220,44 @@ body {
   transition: color 0.2s;
   user-select: none;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.35em;
+  gap: 0.45em;
   width: 100%;
   background: none;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .crush-title span[role="img"] {
-  font-size: 1.22em;
-  filter: drop-shadow(0 1px 10px rgba(255, 126, 185, 0.22));
+  font-size: 1.25em;
+  filter: drop-shadow(0 1.5px 10px rgba(255, 126, 185, 0.22));
   vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  line-height: inherit;
+  padding-top: 0.08em;
+  padding-bottom: 0.02em;
 }
 
+@media (max-width: 800px) {
+  .crush-title {
+    font-size: 3.06rem;
+    margin-bottom: 22px;
+    margin-top: 0.1em;
+  }
+}
 @media (max-width: 600px) {
   .crush-title {
     font-size: 2.35rem;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     margin-top: 0;
+    gap: 0.19em;
+  }
+  .crush-title span[role="img"] {
+    font-size: 1.12em;
+    padding-top: 0.09em;
   }
 }
 

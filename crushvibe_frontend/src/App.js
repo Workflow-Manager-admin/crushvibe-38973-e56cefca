@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+/* global PUBLIC_URL */
 import "./App.css";
 import FloatingHearts from "./components/HeartAnimation";
 import Inputs from "./components/Inputs";
@@ -89,7 +90,7 @@ function App() {
 
       <div className="center-flex" tabIndex={-1}>
         <main className="centered-main-container" role="main">
-          <section className="hero">
+          <section className="hero" style={{ marginTop: 0, paddingTop: 0 }}>
             <h1 className="crush-title">
               Crush-O-Meter <span role="img" aria-label="love emoji">💘</span>
             </h1>
