@@ -450,7 +450,14 @@ select {
   transition: background-color 0.2s ease;
 }
 
-/* Glossy, 3D, Accent Pink Scan the Vibe Button */
+/* Large, Glossy Pink Scan the Vibe Button
+   - Accent color: #FF7EB9
+   - Large & rounded
+   - Bold, playful font (Pacifico/Poppins)
+   - 3D glossy, glass-like effect
+   - Prominent, prominent, visually centered below input fields
+   - Interactive animation on hover/focus/active
+   - Responsive for mobile */
 .scan-vibe-btn {
   display: block;
   width: 100%;
@@ -469,16 +476,15 @@ select {
   outline: none;
   position: relative;
   font-family: 'Pacifico', cursive, 'Poppins', 'Inter', sans-serif;
-  font-size: 1.69rem;
+  font-size: 1.85rem;
   line-height: 1.25;
-  font-weight: 400;
+  font-weight: 500;
   color: #fff;
   cursor: pointer;
   letter-spacing: 0.025em;
   overflow: visible;
   min-height: 66px;
-  /* 3D Gloss highlight: shine effect */
-  /* Pseudo-element for shine/sparkle overlay */
+  user-select: none;
   transition:
     transform 0.18s cubic-bezier(.23,1.04,.47,1.19),
     box-shadow 0.18s,
@@ -486,22 +492,20 @@ select {
   z-index: 10;
   margin-bottom: 20px;
 }
-/* For completeness, .scan-vibe-btn styles already include the required pink accent, glossy, rounded, 3D and hover/focus animation with Pacifico/Poppins font as described in the requirements */
-
 .scan-vibe-btn .scan-btn-text {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.23em;
   width: 100%;
-  padding: 1.05em 0 0.95em 0;
-  font-size: 1.39em;
+  padding: 1.08em 0 0.98em 0;
+  font-size: 1.19em;
   font-family: 'Pacifico', cursive, 'Poppins', sans-serif;
-  /* Shadow for playful pop-out look */
+  /* Fun pop-out look */
   text-shadow:
     0 6px 12px #ff7ec140,
     0 1.5px 1px #fff7;
-  /* Improves legibility */
+  /* Improve legibility and bouncy effect */
   filter: drop-shadow(0 3px 7px #ffaad760);
   user-select: none;
 }
@@ -514,24 +518,24 @@ select {
 
 .scan-vibe-btn:hover,
 .scan-vibe-btn:focus-visible {
-  transform: scale(1.055) translateY(-2px);
+  transform: scale(1.07) translateY(-3.5px);
   box-shadow:
-    0 8px 38px 0 #ff80bb66,
-    0 8px 24px #ffe0f360,
-    0 0.5px 0.5px 0 #fff0 inset,
-    0 3px 12px #f8e1f473;
-  filter: brightness(1.09) saturate(1.09);
+    0 11px 44px 0 #ff80bbc7,
+    0 10px 36px #ffe0f370,
+    0 1px 0.5px #fff7 inset,
+    0 4px 16px #f8e1f49a;
+  filter: brightness(1.14) saturate(1.14);
 }
 
 .scan-vibe-btn:active {
-  transform: scale(0.97) translateY(1px);
+  transform: scale(0.97) translateY(1.7px);
   box-shadow:
     0 1px 7px #ff7eb970,
     0 0.5px 0.5px #fff0 inset;
   filter: brightness(0.97) saturate(0.91);
 }
 
-/* Gloss top shine: pseudo-element for glassy highlight */
+/* Gloss highlight pseudo-element for glassy effect - shines on top */
 .scan-vibe-btn:before {
   content: "";
   display: block;
@@ -551,9 +555,10 @@ select {
 
 .scan-vibe-btn:hover:before,
 .scan-vibe-btn:focus-visible:before {
-  opacity: 0.9;
+  opacity: 0.93;
 }
 
+/* Sparkle effect during hover! */
 .scan-vibe-btn:after {
   content: "✨";
   pointer-events: none;
@@ -577,12 +582,12 @@ select {
 
 @keyframes sparkle {
   0% { opacity: 0; transform: scale(0.75) rotate(-23deg);}
-  55% { opacity: 0.7; transform: scale(1.22) rotate(-2deg);}
+  55% { opacity: 0.7; transform: scale(1.24) rotate(-1deg);}
   80% { opacity: 0.48; transform: scale(1.17) rotate(-7deg);}
   100% { opacity: 0.36; transform: scale(0.92) rotate(-9deg);}
 }
 
-/* Responsive size for mobile */
+/* Mobile: Responsive, keep button big but fitted */
 @media (max-width: 500px) {
   .scan-vibe-btn {
     font-size: 1.18rem;
