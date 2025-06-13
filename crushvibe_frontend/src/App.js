@@ -93,36 +93,41 @@ function FloatingHearts() {
 
 function App() {
   return (
-    <div className="app" style={{ minHeight: '100vh', position: 'relative', zIndex: 1 }}>
-      {/* Floating hearts dreamy overlay */}
+    <div
+      className="app"
+      style={{ minHeight: '100vh', position: 'relative', zIndex: 1 }}
+    >
+      {/* Background floating dreamy hearts overlay */}
       <FloatingHearts />
 
-      <nav className="navbar" style={{ zIndex: 2 }}>
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-            <div className="logo">
-              <span className="logo-symbol">*</span> KAVIA AI
-            </div>
-            <button className="btn">Template Button</button>
-          </div>
-        </div>
-      </nav>
-
-      <main style={{ position: 'relative', zIndex: 3 }}>
-        <div className="center-flex">
-          <div className="centered-main-container">
-            <div className="hero">
-              {/* Example content - to be replaced with form, results, etc */}
-              <div className="subtitle">AI Workflow Manager Template</div>
-              <h1 className="title">crushvibe_frontend</h1>
-              <div className="description">
-                Start building your application.
+      <div className="center-flex" tabIndex={-1}>
+        <main className="centered-main-container" role="main">
+          {/* All app UI elements go inside this responsive container */}
+          <nav className="navbar" style={{ zIndex: 2 }}>
+            <div className="container">
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  width: '100%',
+                }}
+              >
+                <div className="logo">
+                  <span className="logo-symbol">*</span> KAVIA AI
+                </div>
+                <button className="btn">Template Button</button>
               </div>
-              <button className="btn btn-large">Button</button>
             </div>
-          </div>
-        </div>
-      </main>
+          </nav>
+          <section className="hero">
+            {/* Example content - replace with main UI */}
+            <div className="subtitle">AI Workflow Manager Template</div>
+            <h1 className="title">crushvibe_frontend</h1>
+            <div className="description">Start building your application.</div>
+            <button className="btn btn-large">Button</button>
+          </section>
+        </main>
+      </div>
     </div>
   );
 }
