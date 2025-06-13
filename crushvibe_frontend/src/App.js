@@ -120,8 +120,10 @@ function App() {
             </div>
           </nav>
           <section className="hero">
-            {/* Main Crush-O-Meter title */}
-            <h1 className="crush-title">Crush-O-Meter <span role="img" aria-label="love emoji">💘</span></h1>
+            {/* Large playful Crush-O-Meter title */}
+            <h1 className="crush-title">
+              Crush-O-Meter <span role="img" aria-label="love emoji">💘</span>
+            </h1>
             {/* Example content - replace with main UI */}
             <div className="subtitle">AI Workflow Manager Template</div>
             <h1 className="title" style={{display:"none"}}>crushvibe_frontend</h1>

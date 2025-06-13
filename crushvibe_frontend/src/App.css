@@ -177,15 +177,18 @@ body {
 /* Prominent Crush-O-Meter title styling */
 .crush-title {
   font-family: 'Pacifico', cursive, 'Poppins', 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  font-size: 3.6rem;
-  color: var(--accent, #FF7EB9);
+  font-size: 3.5rem;
+  color: #FF7EB9;
   text-align: center;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1.13;
-  margin: 0 0 18px 0;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 32px;
+  margin-left: 0;
+  margin-right: 0;
   text-shadow:
-    0 2px 12px rgba(255, 126, 185, 0.28),
+    0 2px 12px rgba(255, 126, 185, 0.34),
     0 1.5px 3px #fff8,
     0 0.5px 0px #ffdee9;
   z-index: 4;
@@ -194,20 +197,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.28em;
+  gap: 0.35em;
   width: 100%;
+  background: none;
 }
 
 .crush-title span[role="img"] {
-  font-size: 1.15em;
-  filter: drop-shadow(0 1px 10px rgba(255, 126, 185, 0.23));
+  font-size: 1.22em;
+  filter: drop-shadow(0 1px 10px rgba(255, 126, 185, 0.22));
   vertical-align: middle;
 }
 
 @media (max-width: 600px) {
   .crush-title {
     font-size: 2.35rem;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    margin-top: 0;
   }
 }
 
