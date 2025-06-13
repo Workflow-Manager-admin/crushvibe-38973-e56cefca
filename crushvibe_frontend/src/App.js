@@ -120,9 +120,11 @@ function App() {
             </div>
           </nav>
           <section className="hero">
+            {/* Main Crush-O-Meter title */}
+            <h1 className="crush-title">Crush-O-Meter <span role="img" aria-label="love emoji">💘</span></h1>
             {/* Example content - replace with main UI */}
             <div className="subtitle">AI Workflow Manager Template</div>
-            <h1 className="title">crushvibe_frontend</h1>
+            <h1 className="title" style={{display:"none"}}>crushvibe_frontend</h1>
             <div className="description">Start building your application.</div>
             <button className="btn btn-large">Button</button>
           </section>
