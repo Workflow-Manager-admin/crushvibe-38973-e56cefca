@@ -849,3 +849,19 @@ select {
   }
 }
 
+/* Accessibility: Focused element visible-outline (not just default focus ring) */
+input:focus-visible, button:focus-visible, .reset-btn:focus-visible, .scan-vibe-btn:focus-visible, .flirty-dm-btn:focus-visible {
+  outline: 2.5px solid #ad7ae6 !important;
+  outline-offset: 1.2px !important;
+  box-shadow: 0 0 0 4px #f8e1f490 !important;
+  z-index: 22;
+}
+
+input:active, button:active, .reset-btn:active, .scan-vibe-btn:active, .flirty-dm-btn:active {
+  outline: none !important;
+}
+
+.visually-hidden:focus {
+  outline: none !important;
+}
+

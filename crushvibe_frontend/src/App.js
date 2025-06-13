@@ -1,6 +1,22 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './App.css';
 
+// PUBLIC_INTERFACE
+// Focuses the next focusable element in tab order
+function focusNextFocusable(current) {
+  const FOCUSABLE_SELECTORS =
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  if (!current) return;
+  const focusables = Array.from(
+    current.closest('form').querySelectorAll(FOCUSABLE_SELECTORS)
+  ).filter(el => !el.disabled && el.offsetParent !== null);
+  const idx = focusables.indexOf(current);
+  if (idx >= 0 && idx < focusables.length - 1) {
+    focusables[idx + 1].focus();
+  }
+}
+
+
 /**
  * PUBLIC_INTERFACE
  * FloatingHearts overlays animated pastel hearts
@@ -209,12 +225,17 @@ function App() {
               Crush-O-Meter <span role="img" aria-label="love emoji">💘</span>
             </h1>
             {/* Pastel, dreamy heart input fields (beautiful, accessible) */}
-            <form className="crush-input-form" autoComplete="off" aria-label="Crush-O-Meter Names">
+            <form
+              className="crush-input-form"
+              autoComplete="off"
+              aria-label="Crush-O-Meter Names"
+              role="form"
+              onSubmit={e => e.preventDefault()} // prevent accidental form submission/reload on Enter
+            >
               <div className="input-row">
                 <label htmlFor="yourName" className="input-label">
                   <span className="visually-hidden">Your Name</span>
                   <span className="heart-input-icon" aria-hidden="true">
-                    {/* SVG or emoji Heart */}
                     <svg width="21" height="19" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M23.5 2c-2.6 0-4.9 1.6-5.5 4C17 3.7 14.7 2 12.1 2 7.8 2 4.5 5.3 4.5 9.6c0 4.3 3.5 8.5 8.8 13.4l2.2 2 2.2-2c5.3-4.9 8.8-9.1 8.8-13.4C27.5 5.3 24.2 2 19.9 2h-0.2z" fill="#FFB6C1"/>
                     </svg>
@@ -233,14 +254,26 @@ function App() {
                     spellCheck={false}
                     value={yourName}
                     onChange={e => setYourName(e.target.value)}
+                    aria-required="true"
+                    aria-describedby="yourNameHelp"
+                    onKeyDown={e => {
+                      if (e.key === "Enter" || e.key === "Tab") {
+                        if (!e.shiftKey && e.key === "Enter") {
+                          e.preventDefault();
+                          focusNextFocusable(e.target);
+                        }
+                      }
+                    }}
                   />
+                  <span id="yourNameHelp" className="visually-hidden">
+                    Enter your name or nickname.
+                  </span>
                 </label>
               </div>
               <div className="input-row">
                 <label htmlFor="crushName" className="input-label">
                   <span className="visually-hidden">Your Crush’s Name</span>
                   <span className="heart-input-icon" aria-hidden="true">
-                    {/* SVG or emoji Heart */}
                     <svg width="21" height="19" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M23.5 2c-2.6 0-4.9 1.6-5.5 4C17 3.7 14.7 2 12.1 2 7.8 2 4.5 5.3 4.5 9.6c0 4.3 3.5 8.5 8.8 13.4l2.2 2 2.2-2c5.3-4.9 8.8-9.1 8.8-13.4C27.5 5.3 24.2 2 19.9 2h-0.2z" fill="#FFD6E0"/>
                     </svg>
@@ -259,7 +292,20 @@ function App() {
                     spellCheck={false}
                     value={crushName}
                     onChange={e => setCrushName(e.target.value)}
+                    aria-required="true"
+                    aria-describedby="crushNameHelp"
+                    onKeyDown={e => {
+                      if (e.key === "Enter" || e.key === "Tab") {
+                        if (!e.shiftKey && e.key === "Enter") {
+                          e.preventDefault();
+                          focusNextFocusable(e.target);
+                        }
+                      }
+                    }}
                   />
+                  <span id="crushNameHelp" className="visually-hidden">
+                    Enter their name or username.
+                  </span>
                 </label>
               </div>
               {/* Large, glossy pink Scan the Vibe button */}
@@ -268,24 +314,48 @@ function App() {
                 className="scan-vibe-btn"
                 tabIndex="0"
                 aria-label="Scan the Vibe"
-                onClick={handleScanVibeClick}
+                aria-pressed="false"
+                onClick={e => {
+                  handleScanVibeClick(e);
+                  // Move focus to results box for screen readers
+                  setTimeout(() => {
+                    const box = document.getElementById('resultLiveBox');
+                    if (box) box.focus();
+                  }, 25);
+                }}
+                onKeyDown={e => {
+                  if (e.key === " " || e.key === "Enter") {
+                    e.preventDefault();
+                    handleScanVibeClick(e);
+                    setTimeout(() => {
+                      const box = document.getElementById('resultLiveBox');
+                      if (box) box.focus();
+                    }, 25);
+                  }
+                }}
               >
                 <span className="scan-btn-text">
                   Scan the Vibe <span role="img" aria-label="love emoji">💘</span>
                 </span>
               </button>
-              {/* Results display box: Appears only when a result message exists. Soft pastel, playful font, rounded and shadowed. */}
+              {/* Results display box: Soft pastel, playful font, rounded and shadowed. */}
               <div
                 className={`romantic-results-box${resultMsg || dmLine ? " show" : ""}`}
+                id="resultLiveBox"
+                role="region"
+                tabIndex={0}
                 aria-live="polite"
-                style={{ minHeight: "0.5em", marginTop: "-6px"}}
+                aria-atomic="true"
+                aria-label="Romantic result and DM line output"
+                style={{ minHeight: "0.5em", marginTop: "-6px", outline: "none" }}
               >
                 {(resultMsg || dmLine) && (
-                  <span className="romantic-results-message" style={{width:"100%"}}>
+                  <span className="romantic-results-message" style={{ width: "100%" }}>
                     {resultMsg && <span>{resultMsg}</span>}
                     {dmLine && (
                       <span className="flirty-dm-line">
-                        <br/>{dmLine}
+                        <br />
+                        {dmLine}
                       </span>
                     )}
                   </span>
@@ -297,8 +367,26 @@ function App() {
                 className="flirty-dm-btn"
                 tabIndex="0"
                 aria-label="Generate Flirty DM 💌"
-                onClick={handleFlirtyDMClick}
-                style={{display: 'block', margin: '7px auto 0 auto'}}
+                aria-pressed="false"
+                onClick={e => {
+                  handleFlirtyDMClick(e);
+                  // Move focus to result/DM line box for SR
+                  setTimeout(() => {
+                    const box = document.getElementById('resultLiveBox');
+                    if (box) box.focus();
+                  }, 18);
+                }}
+                onKeyDown={e => {
+                  if (e.key === " " || e.key === "Enter") {
+                    e.preventDefault();
+                    handleFlirtyDMClick(e);
+                    setTimeout(() => {
+                      const box = document.getElementById('resultLiveBox');
+                      if (box) box.focus();
+                    }, 18);
+                  }
+                }}
+                style={{ display: 'block', margin: '7px auto 0 auto' }}
               >
                 <span className="flirty-dm-btn-text">
                   Generate Flirty DM <span role="img" aria-label="love letter">💌</span>
@@ -310,13 +398,25 @@ function App() {
                 className="reset-btn"
                 tabIndex="0"
                 aria-label="Reset all fields and results"
-                onClick={handleReset}
+                aria-pressed="false"
+                onClick={e => {
+                  handleReset(e);
+                  // Focus first input for accessibility
+                  setTimeout(() => {
+                    const input = document.getElementById('yourName');
+                    if (input) input.focus();
+                  }, 14);
+                }}
                 style={{
-                  margin: "24px auto 0 auto",
+                  margin: "30px auto 0 auto",
                   display: "block",
                   position: "relative",
-                  // Ensuring the button is spaced at the base and stands out but is harmonious
-                  zIndex: 4
+                  zIndex: 4,
+                  // Responsive bottom space for mobile/desktop
+                  width: "min(90vw, 340px)",
+                  bottom: 0,
+                  left: 0,
+                  right: 0
                 }}
                 autoFocus={false}
               >
@@ -326,9 +426,13 @@ function App() {
               </button>
             </form>
             {/* Example content - replace with main UI */}
-            <div className="subtitle">AI Workflow Manager Template</div>
+            <div className="subtitle" style={{marginTop: 6, marginBottom: 3}}>
+              Built for fun, with big <span role="img" aria-label="sparkling heart">💖</span>
+            </div>
             <h1 className="title" style={{display:"none"}}>crushvibe_frontend</h1>
-            <div className="description">Start building your application.</div>
+            <div className="description" style={{marginBottom: 0}}>
+              Start building your application.
+            </div>
             {/* <button className="btn btn-large">Button</button> */}
           </section>
         </main>
