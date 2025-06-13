@@ -175,7 +175,7 @@ function App() {
                 </label>
               </div>
             </form>
-            {/* Glossy, Large, Playful Pink Scan Button */}
+            {/* Large, glossy pink Scan the Vibe button */}
             <button
               type="button"
               className="scan-vibe-btn"

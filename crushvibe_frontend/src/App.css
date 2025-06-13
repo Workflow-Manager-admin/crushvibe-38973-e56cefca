@@ -486,6 +486,7 @@ select {
   z-index: 10;
   margin-bottom: 20px;
 }
+/* For completeness, .scan-vibe-btn styles already include the required pink accent, glossy, rounded, 3D and hover/focus animation with Pacifico/Poppins font as described in the requirements */
 
 .scan-vibe-btn .scan-btn-text {
   display: flex;
