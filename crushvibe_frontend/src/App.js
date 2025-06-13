@@ -259,7 +259,7 @@ function App() {
               >
                 {(resultMsg || dmLine) && (
                   <span className="romantic-results-message" style={{width:"100%"}}>
-                    {resultMsg}
+                    {resultMsg && <span>{resultMsg}</span>}
                     {dmLine && (
                       <span className="flirty-dm-line">
                         <br/>{dmLine}
@@ -268,17 +268,17 @@ function App() {
                   </span>
                 )}
               </div>
-              {/* Secondary Flirty DM line button */}
+              {/* Flirty DM Generator Button - smaller & cuter, playful visuals */}
               <button
                 type="button"
                 className="flirty-dm-btn"
                 tabIndex="0"
-                aria-label="Generate a Flirty DM Line"
+                aria-label="Generate Flirty DM 💌"
                 onClick={handleFlirtyDMClick}
-                style={{display: 'block', margin: '12px auto 0 auto'}}
+                style={{display: 'block', margin: '7px auto 0 auto'}}
               >
                 <span className="flirty-dm-btn-text">
-                  Generate Flirty DM
+                  Generate Flirty DM <span role="img" aria-label="love letter">💌</span>
                 </span>
               </button>
             </form>

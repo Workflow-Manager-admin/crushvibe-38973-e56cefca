@@ -676,8 +676,11 @@ select {
   display: block;
 }
 
-/* Flirty DM line style inside results box
-   - smaller, playful, soft accent */
+/* Flirty DM generator button and message styling for playful mini-generator
+   - Distinct, cute, and visually separate from the main vibe message
+---------------------------------------------------------- */
+
+/* Displayed DM line in result box: playful, soft, slightly smaller */
 .flirty-dm-line {
   display: block;
   margin-top: 0.67em;
@@ -705,8 +708,7 @@ select {
   opacity: 0.82;
 }
 
-/* Flirty DM generator button style
-   - small, playful, soft accent, unique */
+/* The flirty DM mini-generator button: unique pastel, playful, mini look */
 .flirty-dm-btn {
   background: linear-gradient(91deg, var(--pastel-blue) 30%, var(--pastel-pink) 85%);
   color: #a45ab1;
@@ -719,7 +721,7 @@ select {
   line-height: 1.2;
   letter-spacing: 0.019em;
   padding: 0.63em 2.06em;
-  margin-top: 0.1em;
+  margin-top: 0.15em;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -730,19 +732,16 @@ select {
   min-height: 0;
   outline: none;
 }
-
 .flirty-dm-btn:focus, .flirty-dm-btn:focus-visible {
   outline: 2px solid #dba6f6;
   outline-offset: 1.9px;
 }
-
 .flirty-dm-btn:hover {
   background: linear-gradient(114deg, var(--pastel-pink) 25%, var(--pastel-blue) 100%);
   box-shadow: 0 5px 22px #b2e0f7a6, 0 2px 7px #eac4f3b3;
   transform: scale(1.07) translateY(-1px);
   opacity: 1;
 }
-
 .flirty-dm-btn:active {
   background: linear-gradient(120deg, var(--pastel-lavender) 30%, var(--pastel-blue) 85%);
   box-shadow: 0 1.5px 7px #b2e0f723;
@@ -750,7 +749,7 @@ select {
   transform: scale(0.97) translateY(2px);
 }
 
-/* Flirty DM button text styling */
+/* Button text for flirty DM: make sure it's bouncy, fun, slightly purple */
 .flirty-dm-btn-text {
   font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
   font-size: 1em;
