@@ -105,10 +105,39 @@ const ROMANTIC_MESSAGES = [
   'They think about you at 3am 👀✨'
 ];
 
+/**
+ * List of cute/flirty DM lines to use in generator
+ */
+const FLIRTY_DM_LINES = [
+  "Are you Netflix? Because I could stare at you all night.",
+  "You're the reason my phone lights up and my heart speeds up 😘",
+  "I was going to play it cool, but damn... you’re distracting me.",
+  "Stop being cute. I'm trying to be normal here.",
+  "You’ve been living rent-free in my head all week 🧠💘",
+  "Sooo… when are you taking me out? Asking for a friend 😏",
+  "If I had a crush on anyone else, I’d be lying.",
+  "You make blushing a full-time job 😳",
+  "Wanna be the reason I cancel all my plans this weekend? 👀",
+  "You like me. Just admit it already.",
+  "If flirting was a crime, I’d be guilty. With you as my partner-in-crime 🔥",
+  "I wish I was your phone so you'd touch me all the time 😩📱",
+  "Tell me your favorite movie so I can pretend to like it too 😇",
+  "Lowkey? Highkey? I want to kiss you. Constantly.",
+  "I swear your smile should be illegal. Too powerful.",
+  "If you don’t message me first, I might cry… cutely.",
+  "Hey, stop looking so good. I’m trying to focus here.",
+  "If we were in a group project, I’d do all the work… just to sit next to you.",
+  "You up? Just thinking about you… and maybe marrying you 😅",
+  "Plot twist: I’ve had a crush on you since forever. 😳"
+];
+
+/* eslint-disable no-undef */
 // PUBLIC_INTERFACE
 function App() {
   // State to track current result message
   const [resultMsg, setResultMsg] = useState('');
+  // State to track the current flirty DM line
+  const [dmLine, setDmLine] = useState('');
 
   // Handler for Scan the Vibe button
   // PUBLIC_INTERFACE
@@ -117,6 +146,15 @@ function App() {
     // Pick a random message from the list
     const idx = Math.floor(Math.random() * ROMANTIC_MESSAGES.length);
     setResultMsg(ROMANTIC_MESSAGES[idx]);
+    setDmLine(''); // Clear DM line if scanning vibe again
+  }
+
+  // Handler for Flirty DM line button
+  // PUBLIC_INTERFACE
+  function handleFlirtyDMClick(e) {
+    e.preventDefault();
+    const idx = Math.floor(Math.random() * FLIRTY_DM_LINES.length);
+    setDmLine(FLIRTY_DM_LINES[idx]);
   }
 
   return (
@@ -215,16 +253,34 @@ function App() {
               </button>
               {/* Results display box: Appears only when a result message exists. Soft pastel, playful font, rounded and shadowed. */}
               <div
-                className={`romantic-results-box${resultMsg ? " show" : ""}`}
+                className={`romantic-results-box${resultMsg || dmLine ? " show" : ""}`}
                 aria-live="polite"
                 style={{ minHeight: "0.5em", marginTop: "-6px"}}
               >
-                {resultMsg && (
-                  <span className="romantic-results-message">
+                {(resultMsg || dmLine) && (
+                  <span className="romantic-results-message" style={{width:"100%"}}>
                     {resultMsg}
+                    {dmLine && (
+                      <span className="flirty-dm-line">
+                        <br/>{dmLine}
+                      </span>
+                    )}
                   </span>
                 )}
               </div>
+              {/* Secondary Flirty DM line button */}
+              <button
+                type="button"
+                className="flirty-dm-btn"
+                tabIndex="0"
+                aria-label="Generate a Flirty DM Line"
+                onClick={handleFlirtyDMClick}
+                style={{display: 'block', margin: '12px auto 0 auto'}}
+              >
+                <span className="flirty-dm-btn-text">
+                  Generate Flirty DM
+                </span>
+              </button>
             </form>
             {/* Example content - replace with main UI */}
             <div className="subtitle">AI Workflow Manager Template</div>

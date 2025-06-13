@@ -676,6 +676,94 @@ select {
   display: block;
 }
 
+/* Flirty DM line style inside results box
+   - smaller, playful, soft accent */
+.flirty-dm-line {
+  display: block;
+  margin-top: 0.67em;
+  font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
+  font-size: 0.98em;
+  color: #6b48a1;
+  letter-spacing: 0.014em;
+  font-weight: 500;
+  text-shadow: 0 2px 7px #eac4f345, 0 1px 2px #b2e0f7a6;
+  background: rgba(255,255,255,0.21);
+  border-radius: 1em 1em 1em 1em;
+  padding: 0.57em 1.17em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 97%;
+  box-shadow: 0 1.5px 7px #b2e0f723;
+  transition: background 0.12s, box-shadow 0.12s;
+}
+
+.flirty-dm-line:before {
+  content: '💌 ';
+  font-size: 1em;
+  vertical-align: middle;
+  margin-right: 0.22em;
+  opacity: 0.82;
+}
+
+/* Flirty DM generator button style
+   - small, playful, soft accent, unique */
+.flirty-dm-btn {
+  background: linear-gradient(91deg, var(--pastel-blue) 30%, var(--pastel-pink) 85%);
+  color: #a45ab1;
+  border: none;
+  border-radius: 1.4em;
+  box-shadow: 0 2px 13px #eac4f345, 0 1px 4px #b2e0f7a6, 0 0.5px 0px #fff4 inset;
+  font-family: 'Quicksand', 'Poppins', cursive, sans-serif;
+  font-size: 1.01em;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.019em;
+  padding: 0.63em 2.06em;
+  margin-top: 0.1em;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  opacity: 0.93;
+  transition: background 0.16s, box-shadow 0.18s, transform 0.16s, opacity 0.07s;
+  min-width: 0;
+  min-height: 0;
+  outline: none;
+}
+
+.flirty-dm-btn:focus, .flirty-dm-btn:focus-visible {
+  outline: 2px solid #dba6f6;
+  outline-offset: 1.9px;
+}
+
+.flirty-dm-btn:hover {
+  background: linear-gradient(114deg, var(--pastel-pink) 25%, var(--pastel-blue) 100%);
+  box-shadow: 0 5px 22px #b2e0f7a6, 0 2px 7px #eac4f3b3;
+  transform: scale(1.07) translateY(-1px);
+  opacity: 1;
+}
+
+.flirty-dm-btn:active {
+  background: linear-gradient(120deg, var(--pastel-lavender) 30%, var(--pastel-blue) 85%);
+  box-shadow: 0 1.5px 7px #b2e0f723;
+  opacity: 0.86;
+  transform: scale(0.97) translateY(2px);
+}
+
+/* Flirty DM button text styling */
+.flirty-dm-btn-text {
+  font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: #ad7ae6;
+  text-shadow: 0 1px 4px #e7e9ff87;
+  letter-spacing: 0.017em;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.12em;
+}
+
 /* Mobile-responsive tweak for result box */
 @media (max-width: 500px) {
   .romantic-results-box,
