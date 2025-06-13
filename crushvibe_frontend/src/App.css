@@ -450,6 +450,148 @@ select {
   transition: background-color 0.2s ease;
 }
 
+/* Glossy, 3D, Accent Pink Scan the Vibe Button */
+.scan-vibe-btn {
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto 22px auto;
+  padding: 0;
+  border: none;
+  border-radius: 2.6rem;
+  background: linear-gradient(108deg, #ffb6dc 0%, #FF7EB9 60%, #ff6fb7 100%);
+  box-shadow:
+    0 6px 28px 0 #ff80bb42,
+    0 2.5px 14px #ffe0f3ad,
+    0 0.5px 0.5px 0 #fff0 inset,
+    0 1.5px 34px 0 #efb1ef0c,
+    0 1px 3px #fff7 inset;
+  outline: none;
+  position: relative;
+  font-family: 'Pacifico', cursive, 'Poppins', 'Inter', sans-serif;
+  font-size: 1.69rem;
+  line-height: 1.25;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.025em;
+  overflow: visible;
+  min-height: 66px;
+  /* 3D Gloss highlight: shine effect */
+  /* Pseudo-element for shine/sparkle overlay */
+  transition:
+    transform 0.18s cubic-bezier(.23,1.04,.47,1.19),
+    box-shadow 0.18s,
+    filter 0.15s;
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.scan-vibe-btn .scan-btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.23em;
+  width: 100%;
+  padding: 1.05em 0 0.95em 0;
+  font-size: 1.39em;
+  font-family: 'Pacifico', cursive, 'Poppins', sans-serif;
+  /* Shadow for playful pop-out look */
+  text-shadow:
+    0 6px 12px #ff7ec140,
+    0 1.5px 1px #fff7;
+  /* Improves legibility */
+  filter: drop-shadow(0 3px 7px #ffaad760);
+  user-select: none;
+}
+
+.scan-vibe-btn:focus-visible,
+.scan-vibe-btn:focus {
+  outline: 3px solid var(--accent, #FF7EB9);
+  outline-offset: 2px;
+}
+
+.scan-vibe-btn:hover,
+.scan-vibe-btn:focus-visible {
+  transform: scale(1.055) translateY(-2px);
+  box-shadow:
+    0 8px 38px 0 #ff80bb66,
+    0 8px 24px #ffe0f360,
+    0 0.5px 0.5px 0 #fff0 inset,
+    0 3px 12px #f8e1f473;
+  filter: brightness(1.09) saturate(1.09);
+}
+
+.scan-vibe-btn:active {
+  transform: scale(0.97) translateY(1px);
+  box-shadow:
+    0 1px 7px #ff7eb970,
+    0 0.5px 0.5px #fff0 inset;
+  filter: brightness(0.97) saturate(0.91);
+}
+
+/* Gloss top shine: pseudo-element for glassy highlight */
+.scan-vibe-btn:before {
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 6.5%;
+  left: 8%;
+  width: 84%;
+  height: 36%;
+  border-radius: 2.3rem 2.3rem 1.3rem 1.3rem/ 1.7rem 2.2rem 1rem 1.2rem;
+  background: linear-gradient(110deg, #fff9 10%, #fff7 54%, #fff0 70%);
+  opacity: 0.65;
+  filter: blur(2px);
+  z-index: 2;
+  transition: opacity 0.19s;
+}
+
+.scan-vibe-btn:hover:before,
+.scan-vibe-btn:focus-visible:before {
+  opacity: 0.9;
+}
+
+.scan-vibe-btn:after {
+  content: "✨";
+  pointer-events: none;
+  position: absolute;
+  right: 30px;
+  top: 21px;
+  font-size: 1.21em;
+  line-height: 1;
+  opacity: 0;
+  filter: blur(0.9px);
+  transition: opacity 0.23s, transform 0.26s cubic-bezier(.2,1.16,.51,.9);
+  transform: scale(0.7) rotate(-12deg);
+}
+
+.scan-vibe-btn:hover:after,
+.scan-vibe-btn:focus-visible:after {
+  opacity: 0.48;
+  transform: scale(1.17) rotate(-7deg);
+  animation: sparkle 0.8s cubic-bezier(.2,1.07,.61,1.01) 1;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0.75) rotate(-23deg);}
+  55% { opacity: 0.7; transform: scale(1.22) rotate(-2deg);}
+  80% { opacity: 0.48; transform: scale(1.17) rotate(-7deg);}
+  100% { opacity: 0.36; transform: scale(0.92) rotate(-9deg);}
+}
+
+/* Responsive size for mobile */
+@media (max-width: 500px) {
+  .scan-vibe-btn {
+    font-size: 1.18rem;
+    min-height: 50px;
+    border-radius: 2rem;
+    max-width: 98vw;
+    margin-bottom: 17px;
+  }
+}
+
 .btn:hover {
   background-color: #7691ff;
 }

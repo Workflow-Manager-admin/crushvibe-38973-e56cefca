@@ -175,11 +175,20 @@ function App() {
                 </label>
               </div>
             </form>
+            {/* Glossy, Large, Playful Pink Scan Button */}
+            <button
+              type="button"
+              className="scan-vibe-btn"
+              tabIndex="0"
+              aria-label="Scan the Vibe"
+            >
+              <span className="scan-btn-text">Scan the Vibe <span role="img" aria-label="love emoji">💘</span></span>
+            </button>
             {/* Example content - replace with main UI */}
             <div className="subtitle">AI Workflow Manager Template</div>
             <h1 className="title" style={{display:"none"}}>crushvibe_frontend</h1>
             <div className="description">Start building your application.</div>
-            <button className="btn btn-large">Button</button>
+            {/* <button className="btn btn-large">Button</button> */}
           </section>
         </main>
       </div>
