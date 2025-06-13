@@ -109,14 +109,17 @@ function App() {
       </nav>
 
       <main style={{ position: 'relative', zIndex: 3 }}>
-        <div className="container">
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            <h1 className="title">crushvibe_frontend</h1>
-            <div className="description">
-              Start building your application.
+        <div className="center-flex">
+          <div className="centered-main-container">
+            <div className="hero">
+              {/* Example content - to be replaced with form, results, etc */}
+              <div className="subtitle">AI Workflow Manager Template</div>
+              <h1 className="title">crushvibe_frontend</h1>
+              <div className="description">
+                Start building your application.
+              </div>
+              <button className="btn btn-large">Button</button>
             </div>
-            <button className="btn btn-large">Button</button>
           </div>
         </div>
       </main>
