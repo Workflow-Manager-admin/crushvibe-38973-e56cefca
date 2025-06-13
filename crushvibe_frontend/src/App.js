@@ -309,15 +309,19 @@ function App() {
                 type="button"
                 className="reset-btn"
                 tabIndex="0"
-                aria-label="Reset CrushVibe App"
+                aria-label="Reset all fields and results"
                 onClick={handleReset}
                 style={{
-                  margin: "18px auto 0 auto",
-                  display: "block"
+                  margin: "24px auto 0 auto",
+                  display: "block",
+                  position: "relative",
+                  // Ensuring the button is spaced at the base and stands out but is harmonious
+                  zIndex: 4
                 }}
+                autoFocus={false}
               >
                 <span className="reset-btn-text">
-                  Reset <span role="img" aria-label="reset">🔄</span>
+                  Reset <span role="img" aria-label="reset symbol">🔄</span>
                 </span>
               </button>
             </form>
