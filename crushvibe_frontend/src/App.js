@@ -139,6 +139,10 @@ function App() {
   // State to track the current flirty DM line
   const [dmLine, setDmLine] = useState('');
 
+  // State for input fields to allow imperative reset
+  const [yourName, setYourName] = useState('');
+  const [crushName, setCrushName] = useState('');
+
   // Handler for Scan the Vibe button
   // PUBLIC_INTERFACE
   function handleScanVibeClick(e) {
@@ -155,6 +159,21 @@ function App() {
     e.preventDefault();
     const idx = Math.floor(Math.random() * FLIRTY_DM_LINES.length);
     setDmLine(FLIRTY_DM_LINES[idx]);
+  }
+
+  // Handler for Reset button
+  // PUBLIC_INTERFACE
+  function handleReset(e) {
+    e.preventDefault();
+    setYourName('');
+    setCrushName('');
+    setResultMsg('');
+    setDmLine('');
+    // Focus first input for accessibility after reset
+    setTimeout(() => {
+      const input = document.getElementById('yourName');
+      if (input) input.focus();
+    }, 10);
   }
 
   return (
@@ -212,6 +231,8 @@ function App() {
                     aria-label="Your Name"
                     required
                     spellCheck={false}
+                    value={yourName}
+                    onChange={e => setYourName(e.target.value)}
                   />
                 </label>
               </div>
@@ -236,6 +257,8 @@ function App() {
                     aria-label="Your Crush’s Name"
                     required
                     spellCheck={false}
+                    value={crushName}
+                    onChange={e => setCrushName(e.target.value)}
                   />
                 </label>
               </div>
@@ -279,6 +302,22 @@ function App() {
               >
                 <span className="flirty-dm-btn-text">
                   Generate Flirty DM <span role="img" aria-label="love letter">💌</span>
+                </span>
+              </button>
+              {/* Reset Button - visually distinct, pastel, rounded, accessible */}
+              <button
+                type="button"
+                className="reset-btn"
+                tabIndex="0"
+                aria-label="Reset CrushVibe App"
+                onClick={handleReset}
+                style={{
+                  margin: "18px auto 0 auto",
+                  display: "block"
+                }}
+              >
+                <span className="reset-btn-text">
+                  Reset <span role="img" aria-label="reset">🔄</span>
                 </span>
               </button>
             </form>

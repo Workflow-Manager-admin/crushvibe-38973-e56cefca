@@ -763,6 +763,73 @@ select {
   gap: 0.12em;
 }
 
+/* Well-styled pastel, rounded Reset button */
+.reset-btn {
+  background: linear-gradient(110deg, var(--pastel-mint) 5%, var(--pastel-peach) 62%, var(--pastel-blue) 98%);
+  color: #915886;
+  border: none;
+  border-radius: 2.4em;
+  box-shadow:
+    0 2px 20px #d7eae67c,
+    0 1.5px 11px #ecd7fc4c,
+    0 0.5px 0.5px #fff6 inset;
+  font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
+  font-size: 1.13em;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: 0.018em;
+  padding: 0.74em 2.5em;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  outline: none;
+  min-width: 92px;
+  min-height: 0;
+  opacity: 0.94;
+  transition: 
+    background 0.17s, 
+    box-shadow 0.19s, 
+    transform 0.13s, 
+    opacity 0.07s;
+  display: block;
+  text-align: center;
+}
+
+.reset-btn .reset-btn-text {
+  font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: #915886;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.21em;
+  text-shadow: 0 1px 8px #d7eae640;
+  user-select: none;
+}
+
+.reset-btn:focus, .reset-btn:focus-visible {
+  outline: 2px solid var(--pastel-lavender);
+  outline-offset: 1.7px;
+  box-shadow: 0 0 0 4px #e6d4fb45;
+  filter: brightness(1.05);
+}
+
+.reset-btn:hover {
+  background: linear-gradient(113deg, var(--pastel-mint) 18%, var(--pastel-blue) 85%, var(--pastel-lavender) 100%);
+  box-shadow: 0 6px 28px #b2e0f7b2, 0 2.5px 11px #ecd7fc70;
+  transform: scale(1.05) translateY(-1.5px);
+  opacity: 1;
+}
+
+.reset-btn:active {
+  background: linear-gradient(112deg, var(--pastel-blue) 15%, var(--pastel-mint) 90%);
+  box-shadow: 0 1.5px 6px #b2e0f723;
+  opacity: 0.75;
+  transform: scale(0.98) translateY(1.5px);
+}
+
 /* Mobile-responsive tweak for result box */
 @media (max-width: 500px) {
   .romantic-results-box,
@@ -772,6 +839,12 @@ select {
     padding-left: 0.5em;
     padding-right: 0.5em;
     max-width: 98vw;
+    border-radius: 1.3em;
+  }
+
+  .reset-btn {
+    font-size: .97em;
+    padding: 0.6em 1.6em;
     border-radius: 1.3em;
   }
 }
