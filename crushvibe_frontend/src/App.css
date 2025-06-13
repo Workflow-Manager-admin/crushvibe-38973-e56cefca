@@ -355,12 +355,15 @@ select {
 
 .crush-input-form {
   width: 100%;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 20px;
-  margin-bottom: 30px;
-  margin-top: -16px;
+  gap: 28px;
+  margin-bottom: 40px;
+  margin-top: -10px;
 }
 
 .input-row {
@@ -368,15 +371,19 @@ select {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 2px;
 }
 
 .input-label {
   display: flex;
   align-items: center;
-  gap: 0.85em;
+  gap: 0.95em;
   width: 100%;
-  max-width: 340px;
+  max-width: 500px;
+  min-width: 0;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Accessible: visually hide label but leave for screen readers */
@@ -407,22 +414,24 @@ select {
 /* Heart pastel input */
 .pastel-heart-input {
   flex: 1;
+  min-width: 0;
+  max-width: 100%;
   background:
     linear-gradient(106deg, var(--pastel-peach), var(--pastel-pink) 50%, var(--pastel-lavender) 100%);
   color: #d83672;
   border: none;
-  border-radius: 2.2em;
+  border-radius: 2.8em;
   outline: none;
-  font-size: 1.14rem;
-  font-weight: 500;
-  padding: 1em 1.8em 0.98em 3em;
+  font-size: 1.36rem;
+  font-weight: 600;
+  padding: 1.23em 2.55em 1.12em 3.5em;
   box-shadow:
-    0 2.5px 14px 0 rgba(255, 126, 185, 0.17),
-    0 0.5px 2.5px 0 rgba(110, 121, 252, 0.11),
-    0 0.5px 0.5px 0 rgba(255,255,255,0.12) inset,
+    0 2.5px 14px 0 rgba(255, 126, 185, 0.19),
+    0 0.5px 2.5px 0 rgba(110, 121, 252, 0.12),
+    0 0.5px 0.5px 0 rgba(255,255,255,0.14) inset,
     0 2px 12px #F8E1F4;
-  transition: box-shadow 0.16s, background 0.14s;
-  margin-left: -2.3em;
+  transition: box-shadow 0.16s, background 0.14s, font-size 0.14s, padding 0.18s;
+  margin-left: -2.6em;
   margin-right: 0;
   caret-color: var(--accent, #FF7EB9);
   font-family: 'Poppins', 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
@@ -480,10 +489,84 @@ select {
   border: 0; white-space: nowrap;
 }
 
-@media (max-width: 430px) {
-  .crush-input-form { gap: 14px; }
+@media (max-width: 800px) {
+  .pastel-heart-input {
+    font-size: 1.08rem;
+    padding: 0.95em 1.2em 0.93em 2em;
+  }
+  .romantic-results-box, .romantic-results-message {
+    font-size: 1.03em;
+    max-width: 96vw;
+    padding-left: 0.82em;
+    padding-right: 0.82em;
+    border-radius: 1.5em;
+  }
+  .flirty-dm-btn,
+  .reset-btn,
+  .scan-vibe-btn {
+    font-size: 1.08rem;
+    max-width: 98vw;
+    min-width: 0;
+    min-height: 46px;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 1.55em;
+  }
+  .flirty-dm-line {
+    font-size: 0.99em;
+    max-width: 98vw;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    min-width: 0;
+    border-radius: 1em;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 500px) {
+  .crush-input-form { gap: 11px; padding-left: 0; padding-right: 0;}
   .input-label { max-width:98vw; }
-  .pastel-heart-input { padding-left: 2.4em; font-size: 1.02rem;}
+  .pastel-heart-input { font-size: 0.97rem; padding-left: 1.43em; padding-right: 0.91em; }
+  .romantic-results-box, .romantic-results-message {
+    font-size: 0.97em;
+    max-width: 99vw;
+    padding-left: 0.4em;
+    padding-right: 0.5em;
+    border-radius: 1.08em;
+  }
+
+  .flirty-dm-btn,
+  .reset-btn,
+  .scan-vibe-btn {
+    font-size: 0.97rem;
+    min-height: 39px;
+    max-width: 99vw;
+    min-width: 0;
+    border-radius: 1em;
+    padding-left: 0.78em;
+    padding-right: 0.68em;
+  }
+  .flirty-dm-line {
+    font-size: 0.95em;
+    max-width: 99vw;
+    min-width: 0;
+    border-radius: 0.7em;
+    padding-left: 0.47em;
+    padding-right: 0.45em;
+  }
+}
+
+/* Final polish for very wide desktops (optional) */
+@media (min-width: 1400px) {
+  .centered-main-container {
+    max-width: 1060px;
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+  .romantic-results-box { font-size: 1.5em; max-width: 640px; }
+  .pastel-heart-input { font-size: 1.45rem; }
+  .scan-vibe-btn { font-size: 2.36rem; }
+  .flirty-dm-btn, .reset-btn { font-size: 1.41em; }
 }
 
 .btn {
@@ -509,52 +592,54 @@ select {
 .scan-vibe-btn {
   display: block;
   width: 100%;
-  max-width: 390px;
-  margin: 0 auto 22px auto;
+  max-width: 490px;
+  min-width: 210px;
+  margin: 0 auto 26px auto;
   padding: 0;
   border: none;
-  border-radius: 2.6rem;
+  border-radius: 3.1rem;
   background: linear-gradient(108deg, #ffb6dc 0%, #FF7EB9 60%, #ff6fb7 100%);
   box-shadow:
-    0 6px 28px 0 #ff80bb42,
-    0 2.5px 14px #ffe0f3ad,
+    0 7px 40px 0 #ff80bb5a,
+    0 3px 18px #ffe0f3c5,
     0 0.5px 0.5px 0 #fff0 inset,
-    0 1.5px 34px 0 #efb1ef0c,
-    0 1px 3px #fff7 inset;
+    0 2px 44px 0 #efb1ef19,
+    0 1.5px 5px #fff7 inset;
   outline: none;
   position: relative;
   font-family: 'Pacifico', cursive, 'Poppins', 'Inter', sans-serif;
-  font-size: 1.85rem;
-  line-height: 1.25;
-  font-weight: 500;
+  font-size: 2.15rem;
+  line-height: 1.27;
+  font-weight: 600;
   color: #fff;
   cursor: pointer;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.032em;
   overflow: visible;
-  min-height: 66px;
+  min-height: 84px;
   user-select: none;
   transition:
     transform 0.18s cubic-bezier(.23,1.04,.47,1.19),
     box-shadow 0.18s,
-    filter 0.15s;
+    filter 0.15s,
+    font-size 0.13s;
   z-index: 10;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 .scan-vibe-btn .scan-btn-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.23em;
+  gap: 0.31em;
   width: 100%;
-  padding: 1.08em 0 0.98em 0;
-  font-size: 1.19em;
+  padding: 1.25em 0 1.14em 0;
+  font-size: 1.22em;
   font-family: 'Pacifico', cursive, 'Poppins', sans-serif;
   /* Fun pop-out look */
   text-shadow:
-    0 6px 12px #ff7ec140,
-    0 1.5px 1px #fff7;
+    0 6px 18px #ff7ec160,
+    0 1.7px 2px #fff7;
   /* Improve legibility and bouncy effect */
-  filter: drop-shadow(0 3px 7px #ffaad760);
+  filter: drop-shadow(0 3px 10px #ffaad760);
   user-select: none;
 }
 
@@ -661,24 +746,24 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 52px;
+  min-height: 64px;
   width: 100%;
-  max-width: 375px;
-  margin: 0 auto 18px auto;
-  padding: 1.15em 1.7em 1.08em 1.7em;
+  max-width: 545px;
+  margin: 0 auto 24px auto;
+  padding: 1.48em 2.6em 1.36em 2.6em;
   background: linear-gradient(112deg, var(--pastel-pink) 10%, var(--pastel-lavender) 65%, var(--pastel-blue) 100%);
-  border-radius: 2.1em;
+  border-radius: 2.5em;
   box-shadow:
-    0 7px 48px 0 rgba(167, 134, 255, 0.15),
-    0 3px 34px 0 rgba(255, 187, 220, 0.18),
+    0 7px 48px 0 rgba(167, 134, 255, 0.16),
+    0 3.5px 37px 0 rgba(255, 187, 220, 0.19),
     0 0.5px 2.5px 0 #fff4 inset;
   font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
-  font-size: 1.29em;
-  font-weight: 500;
+  font-size: 1.38em;
+  font-weight: 600;
   color: #ca3a7b;
   letter-spacing: 0.011em;
   text-align: center;
-  transition: box-shadow 0.22s, background 0.22s, opacity 0.13s;
+  transition: box-shadow 0.22s, background 0.22s, opacity 0.13s, max-width 0.14s, padding 0.1s, font-size 0.1s;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -731,21 +816,22 @@ select {
 /* Displayed DM line in result box: playful, soft, slightly smaller */
 .flirty-dm-line {
   display: block;
-  margin-top: 0.67em;
+  margin-top: 0.95em;
   font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
-  font-size: 0.98em;
+  font-size: 1.19em;
   color: #6b48a1;
   letter-spacing: 0.014em;
-  font-weight: 500;
+  font-weight: 600;
   text-shadow: 0 2px 7px #eac4f345, 0 1px 2px #b2e0f7a6;
   background: rgba(255,255,255,0.21);
-  border-radius: 1em 1em 1em 1em;
-  padding: 0.57em 1.17em;
+  border-radius: 1.35em 1.35em 1.25em 1.25em;
+  padding: 0.83em 2em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 97%;
-  box-shadow: 0 1.5px 7px #b2e0f723;
-  transition: background 0.12s, box-shadow 0.12s;
+  max-width: 96%;
+  min-width: 120px;
+  box-shadow: 0 1.5px 12px #b2e0f734;
+  transition: background 0.12s, box-shadow 0.12s, font-size 0.11s;
 }
 
 .flirty-dm-line:before {
@@ -761,23 +847,25 @@ select {
   background: linear-gradient(91deg, var(--pastel-blue) 30%, var(--pastel-pink) 85%);
   color: #a45ab1;
   border: none;
-  border-radius: 1.4em;
-  box-shadow: 0 2px 13px #eac4f345, 0 1px 4px #b2e0f7a6, 0 0.5px 0px #fff4 inset;
+  width: 100%;
+  max-width: 290px;
+  min-width: 155px;
+  min-height: 56px;
+  border-radius: 2em;
+  box-shadow: 0 2px 13px #eac4f345, 0 1px 7px #b2e0f7a6, 0 0.5px 0px #fff4 inset;
   font-family: 'Quicksand', 'Poppins', cursive, sans-serif;
-  font-size: 1.01em;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.019em;
-  padding: 0.63em 2.06em;
-  margin-top: 0.15em;
-  margin-bottom: 10px;
+  font-size: 1.14em;
+  font-weight: 700;
+  line-height: 1.26;
+  letter-spacing: 0.024em;
+  padding: 1em 2.4em;
+  margin-top: 0.23em;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-  opacity: 0.93;
-  transition: background 0.16s, box-shadow 0.18s, transform 0.16s, opacity 0.07s;
-  min-width: 0;
-  min-height: 0;
+  opacity: 0.95;
+  transition: background 0.16s, box-shadow 0.18s, transform 0.16s, opacity 0.07s, font-size 0.13s, padding 0.1s;
   outline: none;
 }
 .flirty-dm-btn:focus, .flirty-dm-btn:focus-visible {
@@ -816,31 +904,34 @@ select {
   background: linear-gradient(110deg, var(--pastel-mint) 5%, var(--pastel-peach) 62%, var(--pastel-blue) 98%);
   color: #915886;
   border: none;
-  border-radius: 2.4em;
+  border-radius: 2.7em;
+  width: 100%;
+  max-width: 340px;
+  min-width: 160px;
+  min-height: 56px;
   box-shadow:
-    0 2px 20px #d7eae67c,
-    0 1.5px 11px #ecd7fc4c,
+    0 2px 22px #d7eae67e,
+    0 1.7px 14px #ecd7fc54,
     0 0.5px 0.5px #fff6 inset;
   font-family: 'Poppins', 'Quicksand', cursive, sans-serif;
-  font-size: 1.13em;
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: 0.018em;
-  padding: 0.74em 2.5em;
-  margin-top: 16px;
-  margin-bottom: 6px;
+  font-size: 1.22em;
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: 0.019em;
+  padding: 1em 2.8em;
+  margin-top: 26px;
+  margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
   outline: none;
-  min-width: 92px;
-  min-height: 0;
-  opacity: 0.94;
+  opacity: 0.96;
   transition: 
     background 0.17s, 
     box-shadow 0.19s, 
     transform 0.13s, 
-    opacity 0.07s;
+    opacity 0.07s,
+    font-size 0.12s, padding 0.09s;
   display: block;
   text-align: center;
 }

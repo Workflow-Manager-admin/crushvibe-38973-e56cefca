@@ -18,7 +18,7 @@ function DMGeneratorButton({ onClick, onKeyDown }) {
       aria-pressed="false"
       onClick={onClick}
       onKeyDown={onKeyDown}
-      style={{ display: "block", margin: "7px auto 0 auto" }}
+      // width & margin handled by CSS for responsive harmony
     >
       <span className="flirty-dm-btn-text">
         Generate Flirty DM <span role="img" aria-label="love letter">💌</span>

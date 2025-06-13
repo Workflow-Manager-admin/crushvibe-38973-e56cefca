@@ -22,7 +22,6 @@ function ResetButton({ onClick, style }) {
         display: "block",
         position: "relative",
         zIndex: 4,
-        width: "min(90vw, 340px)",
         bottom: 0,
         left: 0,
         right: 0,
