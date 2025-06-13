@@ -123,19 +123,20 @@ body {
   box-sizing: border-box;
   gap: 3vw;
   margin-top: 60px;
-  /* For mobile fallback see below */
 }
 .features-sidebar {
   display: flex;
   flex-direction: column;
   gap: 32px;
   margin-top: 24px;
-  /* height: fit-content; */
   box-sizing: border-box;
-  flex: 0 1 295px;
-  min-width: 270px;
-  max-width: 368px;
-  width: 95vw;
+  flex: 0 1 310px;
+  min-width: 230px;
+  max-width: 380px;
+  width: 24vw;
+  align-items: stretch;
+  /* Make the sidebar visibly separate on large screens */
+  margin-left: 2vw;
 }
 @media (max-width: 1200px) {
   .main-app-layout {
@@ -446,33 +447,35 @@ body {
   color: var(--base-light);
 }
 
-/* Main centered container for CrushVibe */
+/* Main left-aligned, smaller container for CrushVibe */
 .centered-main-container {
   position: relative;
-  max-width: 980px; /* Was 680px, now much wider for desktop */
-  width: 98vw;
-  margin: 0 auto;
-  margin-top: 68px;
-  margin-bottom: 56px;
+  max-width: 430px !important;
+  min-width: 250px;
+  width: 92vw;
+  margin: 0 0 46px 2vw !important;
+  margin-top: 38px !important;
+  margin-bottom: 44px !important;
   background: rgba(255,255,255, 0.41);
-  border-radius: 3.3rem;
+  border-radius: 2.8rem;
   box-shadow:
-    0 10px 48px 0 rgba(97, 99, 232, 0.13),
-    0 3.5px 26px 0 rgba(225, 160, 255, 0.16),
-    0 2px 0.5px 0 rgba(255,255,255,0.16) inset
+    0 7px 33px 0 rgba(97, 99, 232, 0.12),
+    0 2px 10px 0 rgba(225, 160, 255, 0.10),
+    0 1px 0.5px 0 rgba(255,255,255,0.15) inset
   ;
-  padding: 64px 96px 50px 96px; /* More generous padding left/right & top */
+  padding: 35px 35px 23px 29px !important;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start !important;
   z-index: 2;
   box-sizing: border-box;
-  transition: box-shadow 0.2s, border-radius 0.22s, max-width 0.18s;
-  /* Soft glassy border */
+  transition: box-shadow 0.2s, border-radius 0.18s, max-width 0.18s;
   border: 1.5px solid rgba(255,255,255,0.23);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
+
+/* Responsive adjustments remain below but base style is left/small */
 
 /* Slightly reduce size on large laptops/screens but lower than 1200px */
 @media (max-width: 1200px) {
@@ -511,35 +514,58 @@ body {
 .logo-symbol {
   display: none !important;
 }
-/* Prominent Crush-O-Meter title styling */
+/* Smaller, left-aligned Crush-O-Meter title styling */
 .crush-title {
   font-family: 'Pacifico', cursive, 'Poppins', 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  font-size: 4.2rem;
+  font-size: 2.2rem !important;
   color: #FF7EB9;
-  text-align: center;
+  text-align: left !important;
   font-weight: bold;
-  letter-spacing: 0.06em;
-  line-height: 1.04;
-  margin-top: 0.2em;
-  margin-bottom: 36px;
+  letter-spacing: 0.05em;
+  margin-top: 0.15em;
+  margin-bottom: 21px;
   margin-left: 0;
   margin-right: 0;
+  padding-left: 3px;
   text-shadow:
-    0 2px 12px rgba(255, 126, 185, 0.34),
-    0 1.5px 3px #fff8,
+    0 1.1px 7px rgba(255, 126, 185, 0.19),
+    0 0.5px 2px #fff3,
     0 0.5px 0px #ffdee9;
   z-index: 4;
-  transition: color 0.2s;
   user-select: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 0.45em;
-  width: 100%;
+  justify-content: flex-start;
+  gap: 0.41em;
+  width: 98%;
   background: none;
   white-space: nowrap;
   overflow: hidden;
+  transition: font-size 0.18s, margin-bottom 0.15s;
+}
+.crush-title.compact {
+  font-size: 2.1rem !important;
+}
+.crush-title span[role="img"] {
+  font-size: 1.25em !important;
+  filter: drop-shadow(0 1px 7px rgba(255, 126, 185, 0.15));
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  line-height: inherit;
+  padding-top: 0.04em;
+  padding-bottom: 0.01em;
+}
+@media (max-width: 650px) {
+  .crush-title, .crush-title.compact {
+    font-size: 1.19rem !important;
+    margin-bottom: 12px;
+    gap: 0.18em;
+  }
+  .crush-title span[role="img"] {
+    font-size: 1.1em !important;
+  }
 }
 
 .crush-title span[role="img"] {
