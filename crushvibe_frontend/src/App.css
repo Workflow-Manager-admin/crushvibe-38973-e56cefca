@@ -140,39 +140,57 @@ body {
 /* Main centered container for CrushVibe */
 .centered-main-container {
   position: relative;
-  max-width: 430px;
+  max-width: 540px;
+  width: 98vw;
   margin: 0 auto;
-  margin-top: 108px;
-  margin-bottom: 44px;
-  background: rgba(255,255,255, 0.38);
-  border-radius: 2.1rem;
+  margin-top: 68px;
+  margin-bottom: 56px;
+  background: rgba(255,255,255, 0.41);
+  border-radius: 3.3rem;
   box-shadow:
-    0 6px 38px 0 rgba(97, 99, 232, 0.13),
-    0 1.5px 24px 0 rgba(225, 160, 255, 0.14),
-    0 1px 0.5px 0 rgba(255,255,255,0.16) inset
+    0 10px 48px 0 rgba(97, 99, 232, 0.13),
+    0 3.5px 26px 0 rgba(225, 160, 255, 0.16),
+    0 2px 0.5px 0 rgba(255,255,255,0.16) inset
   ;
-  padding: 38px 36px 34px 36px;
+  padding: 52px 48px 38px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
   box-sizing: border-box;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, border-radius 0.22s, max-width 0.18s;
   /* Soft glassy border */
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.23);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@media (max-width: 900px) {
+  .centered-main-container {
+    max-width: 96vw;
+    padding: 30px 4vw 30px 4vw;
+    border-radius: 2.1rem;
+    margin-top: 48px;
+    margin-bottom: 32px;
+  }
 }
 
 @media (max-width: 600px) {
   .centered-main-container {
-    margin-top: 62px;
-    margin-bottom: 28px;
-    padding: 26px 8vw 26px 8vw;
-    max-width: 96vw;
-    border-radius: 1.3rem;
+    margin-top: 32px;
+    margin-bottom: 18px;
+    padding: 24px 2vw 22px 2vw;
+    max-width: 98vw;
+    border-radius: 1.5rem;
     min-width: 0;
   }
+}
+
+/* Remove navbar/logo styles (no longer needed) */
+.navbar,
+.logo,
+.logo-symbol {
+  display: none !important;
 }
 /* Prominent Crush-O-Meter title styling */
 .crush-title {

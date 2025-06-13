@@ -89,22 +89,6 @@ function App() {
 
       <div className="center-flex" tabIndex={-1}>
         <main className="centered-main-container" role="main">
-          <nav className="navbar" style={{ zIndex: 2 }}>
-            <div className="container">
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                }}
-              >
-                <div className="logo">
-                  <span className="logo-symbol">*</span> KAVIA AI
-                </div>
-                <button className="btn">Template Button</button>
-              </div>
-            </div>
-          </nav>
           <section className="hero">
             <h1 className="crush-title">
               Crush-O-Meter <span role="img" aria-label="love emoji">💘</span>
