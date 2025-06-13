@@ -209,9 +209,11 @@ function App() {
                 aria-label="Scan the Vibe"
                 onClick={handleScanVibeClick}
               >
-                <span className="scan-btn-text">Scan the Vibe <span role="img" aria-label="love emoji">💘</span></span>
+                <span className="scan-btn-text">
+                  Scan the Vibe <span role="img" aria-label="love emoji">💘</span>
+                </span>
               </button>
-              {/* Results display box: styled, only visible if resultMsg has content */}
+              {/* Results display box: Appears only when a result message exists. Soft pastel, playful font, rounded and shadowed. */}
               <div
                 className={`romantic-results-box${resultMsg ? " show" : ""}`}
                 aria-live="polite"
