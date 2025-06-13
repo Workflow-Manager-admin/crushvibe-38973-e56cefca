@@ -11,9 +11,9 @@ asset bundle.js 1.41 MiB [emitted] (name: main)
 asset index.html 1.92 KiB [emitted]
 runtime modules 27.5 KiB 14 modules
 modules by path ./node_modules/ 1.24 MiB 31 modules
-modules by path ./src/ 30.8 KiB
+modules by path ./src/ 30.9 KiB
   modules by path ./src/*.css 19.6 KiB 4 modules
-  modules by path ./src/*.js 11.2 KiB
+  modules by path ./src/*.js 11.3 KiB
     ./src/index.js 530 bytes [built] [code generated]
     ./src/App.js 10.7 KiB [built] [code generated]
 modules by path ./.ve/ 15.1 KiB
@@ -22,24 +22,225 @@ modules by path ./.ve/ 15.1 KiB
     ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1534 ms
+webpack 5.99.9 compiled successfully in 1614 ms
 assets by status 1.92 KiB [cached] 1 asset
-assets by path *.js 1.43 MiB
-  asset bundle.js 1.41 MiB [emitted] (name: main)
-  asset main.25d1c3d5571b156953ee.hot-update.js 15 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.25d1c3d5571b156953ee.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.43 MiB = bundle.js 1.41 MiB main.25d1c3d5571b156953ee.hot-update.js 15 KiB
-cached modules 1.27 MiB [cached] 41 modules
+assets by path *.js 1.39 MiB
+  asset bundle.js 1.38 MiB [emitted] (name: main)
+  asset main.1ad47630c5d6fab5945e.hot-update.js 6.12 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.1ad47630c5d6fab5945e.hot-update.json 97 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.39 MiB = bundle.js 1.38 MiB main.1ad47630c5d6fab5945e.hot-update.js 6.12 KiB
+cached modules 1.26 MiB [cached] 38 modules
 runtime modules 27.5 KiB 14 modules
-./src/App.js 10.7 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 125 ms
+javascript modules 569 bytes
+  ./src/index.js 530 bytes [code generated]
+  ./src/App.js 39 bytes [built] [code generated] [1 error]
+
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/src/App.js: Identifier 'React' has already been declared. (94:7)
+
+  92 | }
+  93 |
+> 94 | import React, { useRef, useEffect, useState } from 'react';
+     |        ^
+  95 | import './App.css';
+  96 |
+  97 | /**
+    at constructor (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:363:19)
+    at JSXParserMixin.raise (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:6609:19)
+    at ScopeHandler.checkRedeclarationInScope (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:1626:19)
+    at ScopeHandler.declareName (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:1592:12)
+    at JSXParserMixin.declareNameFromIdentifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:7538:16)
+    at JSXParserMixin.checkIdentifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:7534:12)
+    at JSXParserMixin.checkLVal (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:7475:12)
+    at JSXParserMixin.finishImportSpecifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14184:10)
+    at JSXParserMixin.parseImportSpecifierLocal (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14181:31)
+    at JSXParserMixin.maybeParseDefaultImportSpecifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14288:12)
+    at JSXParserMixin.parseImportSpecifiersAndAfter (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14157:29)
+    at JSXParserMixin.parseImport (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14153:17)
+    at JSXParserMixin.parseStatementContent (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12795:27)
+    at JSXParserMixin.parseStatementLike (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12685:17)
+    at JSXParserMixin.parseModuleItem (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12662:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13235:36)
+    at JSXParserMixin.parseBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13228:10)
+    at JSXParserMixin.parseProgram (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12541:10)
+    at JSXParserMixin.parseTopLevel (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12531:25)
+    at JSXParserMixin.parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14410:10)
+    at parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14444:38)
+    at parser (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:261:32)
+    at /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:223:11)
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 73 ms
+assets by status 1.38 MiB [cached] 2 assets
+cached modules 1.26 MiB (javascript) 27.5 KiB (runtime) [cached] 53 modules
+./src/App.js 39 bytes [built] [1 error]
+
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/src/App.js: Identifier 'React' has already been declared. (94:7)
+
+  92 | }
+  93 |
+> 94 | import React, { useRef, useEffect, useState } from 'react';
+     |        ^
+  95 | import './App.css';
+  96 |
+  97 | /**
+    at constructor (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:363:19)
+    at JSXParserMixin.raise (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:6609:19)
+    at ScopeHandler.checkRedeclarationInScope (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:1626:19)
+    at ScopeHandler.declareName (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:1592:12)
+    at JSXParserMixin.declareNameFromIdentifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:7538:16)
+    at JSXParserMixin.checkIdentifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:7534:12)
+    at JSXParserMixin.checkLVal (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:7475:12)
+    at JSXParserMixin.finishImportSpecifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14184:10)
+    at JSXParserMixin.parseImportSpecifierLocal (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14181:31)
+    at JSXParserMixin.maybeParseDefaultImportSpecifier (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14288:12)
+    at JSXParserMixin.parseImportSpecifiersAndAfter (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14157:29)
+    at JSXParserMixin.parseImport (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14153:17)
+    at JSXParserMixin.parseStatementContent (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12795:27)
+    at JSXParserMixin.parseStatementLike (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12685:17)
+    at JSXParserMixin.parseModuleItem (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12662:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13235:36)
+    at JSXParserMixin.parseBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13228:10)
+    at JSXParserMixin.parseProgram (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12541:10)
+    at JSXParserMixin.parseTopLevel (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12531:25)
+    at JSXParserMixin.parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14410:10)
+    at parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14444:38)
+    at parser (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:261:32)
+    at /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:223:11)
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 45 ms
 assets by status 1.92 KiB [cached] 1 asset
-assets by path *.js 1.43 MiB
+assets by path *.js 1.44 MiB
   asset bundle.js 1.41 MiB [emitted] (name: main)
-  asset main.2b204d3238e807c3756d.hot-update.js 17.3 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.2b204d3238e807c3756d.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.43 MiB = bundle.js 1.41 MiB main.2b204d3238e807c3756d.hot-update.js 17.3 KiB
-cached modules 1.27 MiB [cached] 41 modules
+  asset main.5275cc7bd3805f02f894.hot-update.js 31 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.5275cc7bd3805f02f894.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.44 MiB = bundle.js 1.41 MiB main.5275cc7bd3805f02f894.hot-update.js 31 KiB
+cached modules 1.26 MiB [cached] 39 modules
 runtime modules 27.5 KiB 14 modules
-./node_modules/css-loader/dist/cjs.js!./src/App.css 14.3 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 66 ms
+javascript modules 19.9 KiB
+  ./src/index.js 530 bytes [code generated]
+  ./src/App.js 3.09 KiB [built] [code generated]
+  ./node_modules/css-loader/dist/cjs.js!./src/App.css 16.3 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 123 ms
+assets by status 1.92 KiB [cached] 1 asset
+assets by path *.js 1.39 MiB
+  asset bundle.js 1.38 MiB [emitted] (name: main)
+  asset main.bb51682a932d9b9c40e6.hot-update.js 4.82 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.bb51682a932d9b9c40e6.hot-update.json 97 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.39 MiB = bundle.js 1.38 MiB main.bb51682a932d9b9c40e6.hot-update.js 4.82 KiB
+cached modules 1.26 MiB [cached] 38 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 569 bytes
+  ./src/index.js 530 bytes [code generated]
+  ./src/App.js 39 bytes [built] [code generated] [1 error]
+
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/src/App.js: Only one default export allowed per module. (239:0)
+
+  237 | export default App;
+  238 |
+> 239 | export default App;
+      | ^
+    at constructor (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:363:19)
+    at JSXParserMixin.raise (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:6609:19)
+    at JSXParserMixin.checkDuplicateExports (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13992:14)
+    at JSXParserMixin.checkExport (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13922:14)
+    at JSXParserMixin.parseExport (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13750:12)
+    at JSXParserMixin.parseStatementContent (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12797:27)
+    at JSXParserMixin.parseStatementLike (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12685:17)
+    at JSXParserMixin.parseModuleItem (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12662:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13235:36)
+    at JSXParserMixin.parseBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13228:10)
+    at JSXParserMixin.parseProgram (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12541:10)
+    at JSXParserMixin.parseTopLevel (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12531:25)
+    at JSXParserMixin.parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14410:10)
+    at parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14444:38)
+    at parser (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:261:32)
+    at /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:223:11)
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 45 ms
+assets by status 1.38 MiB [cached] 2 assets
+cached modules 1.26 MiB (javascript) 27.5 KiB (runtime) [cached] 53 modules
+./src/App.js 39 bytes [built] [1 error]
+
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/src/App.js: Only one default export allowed per module. (239:0)
+
+  237 | export default App;
+  238 |
+> 239 | export default App;
+      | ^
+    at constructor (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:363:19)
+    at JSXParserMixin.raise (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:6609:19)
+    at JSXParserMixin.checkDuplicateExports (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13992:14)
+    at JSXParserMixin.checkExport (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13922:14)
+    at JSXParserMixin.parseExport (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13750:12)
+    at JSXParserMixin.parseStatementContent (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12797:27)
+    at JSXParserMixin.parseStatementLike (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12685:17)
+    at JSXParserMixin.parseModuleItem (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12662:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13235:36)
+    at JSXParserMixin.parseBlockBody (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:13228:10)
+    at JSXParserMixin.parseProgram (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12541:10)
+    at JSXParserMixin.parseTopLevel (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:12531:25)
+    at JSXParserMixin.parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14410:10)
+    at parse (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/parser/lib/index.js:14444:38)
+    at parser (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transformation/index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:261:32)
+    at /home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/home/kavia/workspace/code-generation/crushvibe-38973-e56cefca/crushvibe_frontend/node_modules/gensync/index.js:223:11)
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 46 ms
+assets by status 1.92 KiB [cached] 1 asset
+assets by path *.js 1.46 MiB
+  asset bundle.js 1.42 MiB [emitted] (name: main)
+  asset main.88f4ae0ac9e19647ed02.hot-update.js 42.5 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.88f4ae0ac9e19647ed02.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.46 MiB = bundle.js 1.42 MiB main.88f4ae0ac9e19647ed02.hot-update.js 42.5 KiB
+cached modules 1.28 MiB [cached] 40 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 12.7 KiB
+  ./src/index.js 530 bytes [code generated]
+  ./src/App.js 12.2 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 110 ms

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './App.css';
 
 /**
@@ -91,7 +91,34 @@ function FloatingHearts() {
   );
 }
 
+/**
+ * Romantic messages list for CrushVibe "Scan the Vibe"
+ */
+const ROMANTIC_MESSAGES = [
+  'They like you... and your dog pics 🐶',
+  'This is giving mutual situationship 💅',
+  'They play cool but their heart races 🥹',
+  'It’s a NO from the universe, bbg 💔',
+  'They saved your reel... TWICE. It’s fate 😳',
+  'Stop playing, you’re the crush 😏',
+  'You should shoot your shot. Right now. 💘',
+  'They think about you at 3am 👀✨'
+];
+
+// PUBLIC_INTERFACE
 function App() {
+  // State to track current result message
+  const [resultMsg, setResultMsg] = useState('');
+
+  // Handler for Scan the Vibe button
+  // PUBLIC_INTERFACE
+  function handleScanVibeClick(e) {
+    e.preventDefault();
+    // Pick a random message from the list
+    const idx = Math.floor(Math.random() * ROMANTIC_MESSAGES.length);
+    setResultMsg(ROMANTIC_MESSAGES[idx]);
+  }
+
   return (
     <div
       className="app"
@@ -180,9 +207,22 @@ function App() {
                 className="scan-vibe-btn"
                 tabIndex="0"
                 aria-label="Scan the Vibe"
+                onClick={handleScanVibeClick}
               >
                 <span className="scan-btn-text">Scan the Vibe <span role="img" aria-label="love emoji">💘</span></span>
               </button>
+              {/* Results display box: styled, only visible if resultMsg has content */}
+              <div
+                className={`romantic-results-box${resultMsg ? " show" : ""}`}
+                aria-live="polite"
+                style={{ minHeight: "0.5em", marginTop: "-6px"}}
+              >
+                {resultMsg && (
+                  <span className="romantic-results-message">
+                    {resultMsg}
+                  </span>
+                )}
+              </div>
             </form>
             {/* Example content - replace with main UI */}
             <div className="subtitle">AI Workflow Manager Template</div>
