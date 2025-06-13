@@ -7,6 +7,93 @@
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Pastel gradients and heart colors for CrushVibe aesthetic */
+  --pastel-pink: #f8d1e9;
+  --pastel-peach: #ffe1d4;
+  --pastel-lavender: #e6d4fb;
+  --pastel-blue: #c6e6fa;
+  --pastel-mint: #dbfbec;
+  --heart1: #ffb6c1;
+  --heart2: #ffd6e0;
+  --heart3: #c2e9fb;
+  --heart4: #eec2fb;
+  --heart5: #ffecb3;
+  --heart6: #d9ffec;
+}
+
+/* Dreamy, playful pastel gradient background */
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  /* Old fallback color */
+  background-color: var(--base-dark);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Pastel multicolor gradient for CrushVibe theme */
+  background: linear-gradient(135deg,
+    var(--pastel-pink) 0%,
+    var(--pastel-peach) 25%,
+    var(--pastel-lavender) 50%,
+    var(--pastel-blue) 75%,
+    var(--pastel-mint) 100%
+  );
+  /* Soft dreamy fade overlay for depth */
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Animated Floating Hearts overlay */
+.floating-hearts-background {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: visible;
+}
+
+/* Heart base style, SVG or spans */
+.heart {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  will-change: transform, opacity;
+  opacity: 0.8;
+  pointer-events: none;
+  /* Blur and glow for dreamy effect */
+  filter: drop-shadow(0 6px 16px rgba(255, 150, 220, 0.18))
+          drop-shadow(0 1px 24px rgba(137, 207, 240, 0.12));
+  transition: opacity 0.2s;
+  animation: float-heart 5s linear forwards;
+}
+
+/* Add up to 6 custom pastel classes for color variety! */
+.heart1 { fill: var(--heart1); }
+.heart2 { fill: var(--heart2); }
+.heart3 { fill: var(--heart3); }
+.heart4 { fill: var(--heart4); }
+.heart5 { fill: var(--heart5); }
+.heart6 { fill: var(--heart6); }
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-340px) scale(1.18) rotate(12deg);
+    opacity: 0;
+  }
 }
 
 body {
